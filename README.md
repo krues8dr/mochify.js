@@ -35,15 +35,18 @@ the lines from the test framework.
 Options:
 
 - `--watch` or `-w` use [watchify][] to watch your files and run the tests on
-  change
-- `--wd` use [min-webdriver][] to run the tests in multiple real browsers
-- `--reporter` or `-R` changes the Mocha reporter (see further down)
-- `--timeout` or `-t` changes the Mocha timeout (ms) default is `2000`
-- `--yields` or `-y` changes the yield interval to allow pending I/O to happen
-- `--cover` checks code coverage with [coverify][]
-- `--node` runs test cases on node (useful with `--cover`)
-- `--debug` launches the WebKit debugger
-- `--port` uses a specific port for the PhantomJS server
+  change.
+- `--wd` use [min-webdriver][] to run the tests in multiple real browsers.
+- `--reporter` or `-R` changes the Mocha reporter (see further down).
+- `--ui` or `-U` changes the Mocha UI. Defaults to `'bdd'`.
+- `--timeout` or `-t` changes the Mocha timeout. Defaults to `2000`.
+- `--yields` or `-y` changes the yield interval to allow pending I/O to happen.
+- `--cover` checks code coverage with [coverify][].
+- `--node` runs test cases on node (useful with `--cover`).
+- `--debug` launches the WebKit debugger.
+- `--port` uses a specific port for the PhantomJS server.
+- `--phantomjs` uses a specific PhantomJS executable. If not specified,
+  `phantomjs` is expected on the `$PATH`.
 
 ## Example package.json configuration
 

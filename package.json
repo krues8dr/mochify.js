@@ -1,6 +1,6 @@
 {
   "name": "mochify",
-  "version": "0.9.4",
+  "version": "0.10.0",
   "description": "TDD with Browserify, Mocha, PhantomJS and WebDriver",
   "keywords": [
     "mocha",
@@ -14,7 +14,8 @@
   ],
   "author": "Maximilian Antoni <mail@maxantoni.de> (http://maxantoni.de)",
   "contributors": [
-    "Andrey Popp <8mayday@gmail.com>"
+    "Andrey Popp <8mayday@gmail.com>",
+    "JP Richardson <jprichardson@gmail.com>"
   ],
   "homepage": "https://github.com/mantoni/mochify.js",
   "engines": {
@@ -37,7 +38,7 @@
     "watchify": "~0.9.0",
     "coverify": "~1.0.6",
     "mocaccino": "~0.8.0",
-    "phantomic": "~0.7.0",
+    "phantomic": "~0.8.0",
     "through": "^2.3.4",
     "resolve": "~0.6.1",
     "glob": "^3.2.6",
