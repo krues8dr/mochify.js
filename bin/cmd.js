@@ -8,16 +8,16 @@
  */
 'use strict';
 
-var watchify   = require('watchify');
-var browserify = require('browserify');
-var coverify   = require('coverify');
-var through    = require('through');
-var resolve    = require('resolve');
-var path       = require('path');
-var mocaccino  = require('mocaccino');
-var args       = require('../lib/args');
-var cover      = require('../lib/cover');
-var launch     = require('../lib/launch');
+var watchify       = require('watchify');
+var makeBrowserify = require('browserify/bin/args');
+var coverify       = require('coverify');
+var through        = require('through');
+var resolve        = require('resolve');
+var path           = require('path');
+var mocaccino      = require('mocaccino');
+var args           = require('../lib/args');
+var cover          = require('../lib/cover');
+var launch         = require('../lib/launch');
 
 var opts    = args(process.argv.slice(2));
 var cwd     = process.cwd();
@@ -77,7 +77,12 @@ if (opts.node) {
   brOpts.builtins = false;
   brOpts.commondir = false;
 }
-var b = browserify(brOpts);
+var browserifyOptions = opts.browserify;
+browserifyOptions = browserifyOptions.concat(opts.entries);
+console.log(opts.entries);
+
+var b = makeBrowserify(browserifyOptions);
+//var b = browserify(brOpts);
 if (opts.wd) {
   var minWebDriverFile = resolve.sync('min-wd', {
     baseDir: __dirname,
@@ -91,9 +96,9 @@ if (opts.wd) {
   b.transform(require("min-wd"));
 }
 
-opts.entries.forEach(function (entry) {
-  b.add(entry);
-});
+// opts.entries.forEach(function (entry) {
+//   b.add(entry);
+// });
 b.plugin(mocaccino, {
   reporter : opts.reporter,
   node     : opts.node,
